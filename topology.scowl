@@ -1,0 +1,6 @@
+event verify_email
+
+email := $.email as string
+domain := EmailDomain(email)
+verdict := Decision(Allow, Block, Review default Allow)
+free_domain := Review when domain in ['gmail.com', 'yahoo.com', 'hotmail.com']
